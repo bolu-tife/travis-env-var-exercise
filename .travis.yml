@@ -15,7 +15,7 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node .
+  - docker build -t simple-node --build-arg RANDOM_VARIABLE=${RANDOM_VARIABLE} .
   - docker tag simple-node boluomo/simple-node:latest
 
 after_success:
